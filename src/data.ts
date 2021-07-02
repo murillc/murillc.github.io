@@ -1,7 +1,7 @@
 import { FaAccessibleIcon, FaGamepad, FaGithub, FaLinkedin, FaRegFileCode, FaRegKeyboard } from "react-icons/fa";
 
 export const personalData = {
-    intro: `Hello! I am a 4th year Computer Engineering student at McMaster University, with a keen interest in both web dev and embedded systems. Always looking for new opportunities to learn and apply myself.`,
+    intro: `Hello! I am a Computer Engineering student who has recently finished 3rd year at McMaster University, with a keen interest in both web dev and embedded systems. In my free time I like to read and play fighting games. Always looking for new opportunities to learn and apply myself.`,
 };
     
 

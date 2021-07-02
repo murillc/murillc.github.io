@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Button,
   Box,
   Heading,
   HStack,
@@ -9,7 +10,7 @@ import {
   useColorMode,
   VStack,
   Text,
-  Icon
+  Icon,
 } from '@chakra-ui/react'
 import { personalData, links, softwareProjects, webappLinks} from './data';
 import { FaGithub } from 'react-icons/fa'
@@ -29,7 +30,7 @@ function App() {
   return (
     <>
       <Box display={{ md: "flex" }} m = {10} spacing={3}>
-        <VStack align="left" maxW = "md" minW = "sm">
+        <VStack align="left" maxW = "md" minW = "350px">
           <Stack direction = "row">
             <Heading>
               Carlos Murillo
@@ -44,22 +45,29 @@ function App() {
             </IconButton> */}
           </Stack>
           
-          <Box border = "1px" p={1} borderColor="gray.700">
+          <Box p={1} border = "2px" borderColor="gray.600" borderRadius="lg">
             {personalData.intro}
           </Box>
-          <SimpleGrid columns={2}>
+          <SimpleGrid columns={2} spacing={4}>
             {links.map(
               link => (
-                <Link
-                  display="block"
-                  href={link.link}
-                  isExternal
-                >
-                  <HStack>
-                    <Icon as={link.icon}></Icon>
-                    <Text>{link.text}</Text>
-                  </HStack>
-                </Link>
+                
+                  <Link
+                    display="block"
+                    href={link.link}
+                    isExternal
+                  >
+                    <Button
+                      leftIcon={<link.icon />}
+                      isFullWidth
+                    >
+                    {/* <HStack>
+                      <Icon as={link.icon}></Icon>
+                      <Text>{link.text}</Text>
+                    </HStack> */}
+                      {link.text}
+                    </Button>
+                  </Link>
               )
             )}
           </SimpleGrid>
