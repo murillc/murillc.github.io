@@ -17,7 +17,7 @@ const DataBox = (props: Props) => {
   return (
     <>
       <Box display={{ md: "flex" }} className="pulse" borderRadius="lg">
-        <Link fontSize="lg" href={props.proj.link} isExternal minW="300px">
+        <Link fontSize="lg" href={props.proj.link} isExternal minW="350px">
           <AspectRatio ratio={4 / 3}>
             <Image src={props.proj.img}></Image>
           </AspectRatio>

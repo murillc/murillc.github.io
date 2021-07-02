@@ -2,18 +2,20 @@ import React from 'react';
 import {
   Box,
   Heading,
+  HStack,
   Link,
   SimpleGrid,
   Stack,
   useColorMode,
-  VStack
+  VStack,
+  Text,
+  Icon
 } from '@chakra-ui/react'
 import { personalData, links, softwareProjects, webappLinks} from './data';
-import { FaMoon } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 
-import { GlobalStyle } from './global-styles';
 import DataBox from './components/DataBox';
 
 import JSONPretty from 'react-json-pretty';
@@ -46,14 +48,17 @@ function App() {
             {personalData.intro}
           </Box>
           <SimpleGrid columns={2}>
-            {Object.keys(links).map(
-              key => (
+            {links.map(
+              link => (
                 <Link
                   display="block"
-                  href={links[key]}
+                  href={link.link}
                   isExternal
                 >
-                  {key}
+                  <HStack>
+                    <Icon as={link.icon}></Icon>
+                    <Text>{link.text}</Text>
+                  </HStack>
                 </Link>
               )
             )}
@@ -98,7 +103,7 @@ function App() {
         </Tabs>
         
       </Box>
-      <GlobalStyle/>
+      {/* <GlobalStyle/> */}
     </>
   );
 }

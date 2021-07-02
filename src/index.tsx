@@ -5,6 +5,11 @@ import reportWebVitals from './reportWebVitals';
 
 import {ChakraProvider, extendTheme} from "@chakra-ui/react"
 
+import theme from "./theme"
+
+import { GlobalStyle } from './global-styles';
+
+
 // const theme = extendTheme({
 //   styles: {
 //     global: {
@@ -19,9 +24,10 @@ import {ChakraProvider, extendTheme} from "@chakra-ui/react"
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
+    <GlobalStyle/>
   </React.StrictMode>,
   document.getElementById('root')
 );
