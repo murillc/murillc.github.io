@@ -12,7 +12,7 @@ import {
   Text,
   Icon,
 } from '@chakra-ui/react'
-import { personalData, links, softwareProjects, webappLinks} from './data';
+import { personalData, links, softwareProjects, aboutMe} from './data';
 import { FaGithub } from 'react-icons/fa'
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
@@ -20,6 +20,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import DataBox from './components/DataBox';
 
 import JSONPretty from 'react-json-pretty';
+import AboutBox from './components/AboutBox';
 var JSONPrettyMon = require('react-json-pretty/dist/acai');
 
 
@@ -75,37 +76,29 @@ function App() {
         
         <Tabs variant="enclosed-colored" mt={{ base: 4, md: 0 }} ml={{md: 3}}>
           <TabList>
+            <Tab>About</Tab>
             <Tab>Projects</Tab>
-            <Tab>Webapps</Tab>
-            <Tab>Raw Data</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
               <Stack spacing={3}>
-                {softwareProjects.map(project => (
-                  <DataBox proj={project} />
-                ))}
+                {/* {aboutMe.map(data => (
+                  <AboutBox data={data}/>
+                ))} */}
+                <AboutBox intro={aboutMe.intro} data={aboutMe.data}/>
               </Stack>
             </TabPanel>
             <TabPanel>
               <Stack spacing={3}>
-                {webappLinks.map(project => (
-                  <DataBox proj={project} />
+                {softwareProjects.map(project => (
+                  <DataBox proj={project} lockAspectRatio={true}/>
                 ))}
               </Stack>
             </TabPanel>
             <TabPanel>
-            <JSONPretty
-              mainStyle="padding:1em;"
-              style={{ borderRadius: '20px' }}
-              id="json-pretty"
-              data={{
-                personalData: { ...personalData },
-                softwareProjects: { ...softwareProjects },
-                webappLinks: { ...webappLinks },
-              }}
-              theme={JSONPrettyMon}
-            ></JSONPretty>
+              <Box display={{ md: "flex" }} className="pulse" borderRadius="lg" p={3}>
+                Placeholder for eventual blogs etc.
+              </Box>
             </TabPanel>
           </TabPanels>
         </Tabs>

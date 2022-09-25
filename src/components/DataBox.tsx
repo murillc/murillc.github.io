@@ -11,6 +11,7 @@ import {
 
 interface Props {
   proj: any;
+  lockAspectRatio: boolean;
 }
 
 const DataBox = (props: Props) => {
@@ -18,7 +19,7 @@ const DataBox = (props: Props) => {
     <>
       <Box display={{ md: "flex" }} className="pulse" borderRadius="lg">
         <Link fontSize="lg" href={props.proj.link} isExternal minW="350px">
-          <AspectRatio ratio={4 / 3}>
+          <AspectRatio ratio={props.lockAspectRatio ? 4 / 3 : 1}>
             <Image src={props.proj.img}></Image>
           </AspectRatio>
         </Link>
