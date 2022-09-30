@@ -12,7 +12,7 @@ export const aboutMe = {
         date: '',
         link: 'https://github.com/murillc/lidar-room-plotter',
         text:
-        "I'm a final year Computer Engineering student at McMaster who enjoys learning about and interacting with the fundamental ways computers are organized and implemented. Website WIP (I want to leverage new experience to improve it!)",
+        "I'm a final year Computer Engineering student at McMaster who enjoys learning about and interacting with the fundamental ways computers are organized and implemented.",
     },
     data: [
         {
